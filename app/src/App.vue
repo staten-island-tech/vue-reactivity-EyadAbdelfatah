@@ -1,12 +1,18 @@
 <template>
-  
-  <WordleGrid/>
+  <div id="header" class="justify-items-center">
+    <h1 class="text-xl text-white">This is Words and Stuffs</h1>
+    <WordScramble />
+    <WordGuess />
+  </div>
 </template>
 
 <script setup>
-import WordleGrid from './components/WordScramble.vue';
+import WordScramble from './components/WordScramble.vue'
+import WordGuess from './components/WordGuess.vue'
 </script>
 
-<style  scoped>
-
+<style>
+body {
+  background-color: black;
+}
 </style>
