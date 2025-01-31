@@ -1,17 +1,13 @@
 <template>
-  <div class="about">
-    <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <div>
+    <h1 class="underline">yay</h1>
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+<script setup>
+
+</script>
+
+<style  scoped>
+
 </style>
