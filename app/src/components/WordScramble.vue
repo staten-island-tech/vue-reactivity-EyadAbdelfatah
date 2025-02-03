@@ -1,11 +1,13 @@
 <template>
   <div class="">
-    <h2 class="text-white text-xl">{{ word }}</h2>
+    <h2 class="text-white text-xl" >{{ word }}</h2>
+
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref,reactive } from 'vue'
+
 const words = [
   'airplane',
   'balloon',
@@ -44,13 +46,19 @@ const words = [
 
 const num = Math.floor(Math.random() * words.length)
 let word = ref(words[num])
+const correctWord=words[num]
 function scrambleWords() {
   word.value = word.value
     .split('')
     .sort(() => 0.5 - Math.random())
     .join('')
+  console.log(word.value)
 }
 scrambleWords()
+defineExpose({
+  correctWord,word
+})
+
 </script>
 
 <style scoped></style>

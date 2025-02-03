@@ -1,7 +1,7 @@
 <template>
   <div id="header" class="justify-items-center">
     <h1 class="text-xl text-white">This is Words and Stuffs</h1>
-    <WordScramble />
+
     <WordGuess />
   </div>
 </template>
@@ -12,7 +12,5 @@ import WordGuess from './components/WordGuess.vue'
 </script>
 
 <style>
-body {
-  background-color: black;
-}
+
 </style>
