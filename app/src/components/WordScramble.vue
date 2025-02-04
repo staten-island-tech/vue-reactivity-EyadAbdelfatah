@@ -1,13 +1,13 @@
 <template>
   <div class="">
     <h2 class="text-white text-xl" >{{ word }}</h2>
-
+    <WordGuess :scrambled="word" :correct="correctWord"/>
   </div>
 </template>
 
 <script setup>
 import { ref,reactive } from 'vue'
-
+import WordGuess from './WordGuess.vue'
 const words = [
   'airplane',
   'balloon',
@@ -55,9 +55,7 @@ function scrambleWords() {
   console.log(word.value)
 }
 scrambleWords()
-defineExpose({
-  correctWord,word
-})
+
 
 </script>
 

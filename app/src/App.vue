@@ -2,7 +2,8 @@
   <div id="header" class="justify-items-center">
     <h1 class="text-xl text-white">This is Words and Stuffs</h1>
 
-    <WordGuess />
+   
+    <WordScramble/>
   </div>
 </template>
 
