@@ -46,7 +46,7 @@ const words = [
 
 const num = Math.floor(Math.random() * words.length)
 let word = ref(words[num])
-const correctWord=words[num]
+const correctWord = words[num]
 function scrambleWords() {
   word.value = word.value
     .split('')

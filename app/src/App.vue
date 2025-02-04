@@ -1,6 +1,6 @@
 <template>
   <div id="header" class="justify-items-center">
-    <h1 class="text-xl text-white">This is Words and Stuffs</h1>
+    <h1 class="text-xl">This is Words and Stuffs</h1>
 
    
     <WordScramble/>
@@ -12,6 +12,4 @@ import WordScramble from './components/WordScramble.vue'
 import WordGuess from './components/WordGuess.vue'
 </script>
 
-<style>
-
-</style>
+<style scoped></style>
