@@ -1,12 +1,16 @@
 <template>
   <div class="">
-    <h2 class="text-white text-xl" >{{ word }}</h2>
-    <WordGuess :scrambled="word" :correct="correctWord"/>
+    <WordGuess
+      :scrambled="word"
+      :correct="correctWord"
+      :word_list="words"
+      :word_next="scrambleWords"
+    />
   </div>
 </template>
 
 <script setup>
-import { ref,reactive } from 'vue'
+import { ref } from 'vue'
 import WordGuess from './WordGuess.vue'
 const words = [
   'airplane',
@@ -16,7 +20,6 @@ const words = [
   'cherry',
   'date',
   'dinosaur',
-  'elephant',
   'elephant',
   'flame',
   'forest',
@@ -35,28 +38,30 @@ const words = [
   'quilt',
   'rose',
   'sunflower',
+  'tariffs',
   'tree',
+  'trump',
   'umbrella',
   'violet',
   'watermelon',
+  'whalen',
   'xylophone',
   'yarn',
   'zebra',
 ]
 
-const num = Math.floor(Math.random() * words.length)
-let word = ref(words[num])
-const correctWord = words[num]
 function scrambleWords() {
+  const num = Math.floor(Math.random() * words.length)
+  let word = ref(words[num])
+  const correctWord = words[num]
   word.value = word.value
+
     .split('')
     .sort(() => 0.5 - Math.random())
     .join('')
   console.log(word.value)
 }
 scrambleWords()
-
-
 </script>
 
 <style scoped></style>

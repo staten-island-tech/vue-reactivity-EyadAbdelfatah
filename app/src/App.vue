@@ -2,8 +2,7 @@
   <div id="header" class="justify-items-center">
     <h1 class="text-xl">This is Words and Stuffs</h1>
 
-   
-    <WordScramble/>
+    <WordScramble />
   </div>
 </template>
 
