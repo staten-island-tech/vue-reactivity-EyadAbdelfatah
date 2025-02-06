@@ -15,7 +15,6 @@ const props = defineProps({
   scrambled: String,
   correct: String,
   word_list: Array,
-  word_next: Function,
 })
 
 const guess = ref('')
@@ -24,9 +23,10 @@ let win_counter = ref(0)
 const submit = () => {
   if (props.correct === guess.value) {
     console.log('yipee')
+    $emit('scramble')
     win = true
     win_counter.value++
-    console.log(win_counter.value)
+    word.value
   }
 }
 </script>
