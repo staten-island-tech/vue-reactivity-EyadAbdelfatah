@@ -3,7 +3,7 @@
     <form action="" method="get" class="" @submit.prevent="submit">
       <input placeholder="Type here" class="input input-bordered w-full max-w-xs" v-model="guess" />
     </form>
-    <h2 class="text-xl" v-if="win == true">{{ word }}</h2>
+    <h2 class="text-xl">{{ word }}</h2>
     <h3>{{ win_counter }}</h3>
     <WordScramble />
   </div>
@@ -14,20 +14,17 @@ import { ref } from 'vue'
 const props = defineProps({
   scrambled: String,
   correct: String,
-  word_list: Array,
 })
 
 const guess = ref('')
 let win
 let win_counter = ref(0)
 const submit = () => {
-  if (props.correct === guess.value) {
-    console.log('yipee')
-    $emit('scramble')
-    win = true
-    win_counter.value++
-    word.value
-  }
+  console.log('yipee')
+  $emit('scramble')
+  win = true
+  win_counter.value++
+  word.value = ''
 }
 </script>
 

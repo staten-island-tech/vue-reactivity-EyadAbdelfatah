@@ -1,11 +1,6 @@
 <template>
   <div class="">
-    <WordGuess
-      :scrambled="word"
-      :correct="correctWord"
-      :word_list="words"
-      @scramble="scrambleWords()"
-    />
+    <WordGuess :scrambled="word" :correct="correctWord" @scramble="scrambleWords()" />
   </div>
 </template>
 
@@ -52,12 +47,16 @@ const words = reactive([
 
 function scrambleWords() {
   const num = Math.floor(Math.random() * words.length)
-  let word = ref(words[num])
+
   let correctWord = words[num]
-  word.value = word.value
-    .split('')
-    .sort(() => 0.5 - Math.random())
-    .join('')
+  let word = computed(() => {
+    return ref(
+      words[num]
+        .split('')
+        .sort(() => 0.5 - Math.random())
+        .join(''),
+    )
+  })
   console.log(word.value)
 }
 scrambleWords()
