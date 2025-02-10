@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive } from 'vue'
 import WordGuess from './WordGuess.vue'
 const words = reactive([
   'airplane',
@@ -44,20 +44,18 @@ const words = reactive([
   'yarn',
   'zebra',
 ])
-
+let word = ref('')
+let correctWord = ref('')
 function scrambleWords() {
   const num = Math.floor(Math.random() * words.length)
 
-  let correctWord = words[num]
-  let word = computed(() => {
-    return ref(
-      words[num]
-        .split('')
-        .sort(() => 0.5 - Math.random())
-        .join(''),
-    )
-  })
-  console.log(word.value)
+  correctWord = words[num]
+
+  word = words[num]
+    .split('')
+    .sort(() => 0.5 - Math.random())
+    .join('')
+  console.log(word)
 }
 scrambleWords()
 </script>
