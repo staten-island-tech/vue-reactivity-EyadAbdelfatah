@@ -51,11 +51,11 @@ function scrambleWords() {
 
   correctWord = words[num]
 
-  word = words[num]
+  word.value = words[num]
     .split('')
     .sort(() => 0.5 - Math.random())
     .join('')
-  console.log(word)
+
 }
 scrambleWords()
 </script>
