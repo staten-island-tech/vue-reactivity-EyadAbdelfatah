@@ -10,9 +10,10 @@
       </form>
     </div>
 
-    <div class="grid justify-center grid-rows-2">
+    <div class="grid grid-cols-7 gap-4"></div>
+
+    <div class="grid grid-rows-2 justify-center">
       <h2 class="text-xl">scrambled Word: {{ scrambled }}</h2>
-      <br />
       <h3>Win Counter: {{ win_counter }}</h3>
       <WordScramble />
     </div>
