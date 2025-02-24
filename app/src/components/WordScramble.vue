@@ -8,18 +8,18 @@
 import { ref, reactive } from 'vue'
 import WordGuess from './WordGuess.vue'
 
-const words = reactive([
-  "brick", "frost", "blunt", "grasp", "cling", "drift", "plumb", "swift", "charm", "trunk",
-  "brisk", "flint", "crisp", "glint", "stomp", "clamp", "prong", "twist", "clump", "brunt",
-  "thump", "crank", "stint", "whisk", "plank", "stark", "crush", "grump", "plush", "draft",
-  "throb", "flask", "stung", "grunt", "blitz", "swamp", "twang", "scalp", "whiff", "crush",
-  "brass", "swoop", "quilt", "prism", "drank", "scorn", "tramp", "spunk", "snarl", "flick",
-  "grind", "pluck", "throb", "crisp", "sworn", "broth", "stoke", "clash", "swank", "clout",
-  "whack", "brawn", "frisk", "chomp", "slink", "swish", "spool", "drown", "whisk", "splat",
-  "gruff", "tryst", "swoon", "chasm", "brute", "churn", "frank", "chomp", "sworn", "brash",
-  "glove", "thump", "graft", "drill", "slink", "clink", "prone", "brisk", "spine", "trill",
-  "plump", "frost", "flair", "stark", "broil", "skimp", "shorn", "whirl", "chunk", "grill"
-]);
+const words = reactive(["apple", "banana", "cherry", "dog", "elephant", "forest", "guitar", "house", "island", "jungle",
+  "kangaroo", "lemon", "mountain", "notebook", "ocean", "pencil", "quartz", "river", "sunset", "tiger",
+  "umbrella", "volcano", "whisper", "xylophone", "yogurt", "zebra", "anchor", "bridge", "castle", "diamond",
+  "engine", "fountain", "glacier", "harbor", "icicle", "jigsaw", "knight", "lantern", "meadow", "nectar",
+  "orchid", "penguin", "quiver", "rainbow", "sapphire", "tornado", "unicorn", "voyage", "waterfall", "xenon",
+  "yacht", "zeppelin", "asteroid", "blossom", "compass", "dragonfly", "emerald", "firefly", "galaxy", "horizon",
+  "illusion", "jasmine", "koala", "labyrinth", "mermaid", "nebula", "octopus", "paradise", "quokka", "raven",
+  "starlight", "treasure", "utopia", "vortex", "wildflower", "x-ray", "yonder", "zephyr", "alchemy", "breeze",
+  "crystal", "destiny", "echo", "feather", "gargoyle", "hummingbird", "infinity", "journey", "kaleidoscope", "lullaby",
+  "mystery", "nirvana", "obsidian", "phoenix", "quest", "radiance", "serenity", "twilight", "unravel", "vivid",
+  "wanderlust", "xenophile", "yearning", "zenith"]
+);
 let word = ref('')
 let correctWord = ref('')
 function scrambleWords() {
