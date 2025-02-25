@@ -18,7 +18,7 @@ let allowBool = ref(false)
 function allowGame(){
     allowBool.value = true
 }
-let counter = ref(15) 
+let counter = ref(100) 
 let interval = null 
 
 function startCountdown() {
