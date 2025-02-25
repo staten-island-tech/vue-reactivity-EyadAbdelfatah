@@ -25,8 +25,10 @@ import { ref, defineEmits } from 'vue'
 const props = defineProps({
   scrambled: String,
   correct: String,
+  allow:Boolean
 })
-
+console.log(props.scrambled)
+console.log(props.correct)
 const guess = ref('')
 const emit = defineEmits('')
 let win_counter = ref(0)

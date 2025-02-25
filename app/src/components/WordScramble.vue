@@ -1,118 +1,64 @@
 <template>
-  <div class="">
-    <SelectCategory />
-    <WordGuess :scrambled="word" :correct="correctWord" @scramble="scrambleWords()" />
+  <div>
+
+    <WordGuess v-if="counter>0" :scrambled="word" :correct="correctWord" @scramble="scrambleWords()" />
+    
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue'
 import WordGuess from './WordGuess.vue'
-import SelectCategory from './SelectCategory.vue'
+
+const show = ref(true); 
+
 const words = reactive([
-  'acorn',
-  'book',
-  'cloud',
-  'drum',
-  'eagle',
-  'feather',
-  'giraffe',
-  'hippopotamus',
-  'ice',
-  'jewel',
-  'kangaroo',
-  'leopard',
-  'moose',
-  'notebook',
-  'owl',
-  'penguin',
-  'quiver',
-  'rocket',
-  'snowflake',
-  'tiger',
-  'unicorn',
-  'vulture',
-  'whistle',
-  'xenon',
-  'oganesson',
-  'yak',
-  'zinc',
-  'apricot',
-  'brush',
-  'cactus',
-  'dog',
-  'elephant',
-  'flower',
-  'glove',
-  'insect',
-  'jar',
-  'kiwi',
-  'lemon',
-  'mango',
-  'net',
-  'octopus',
-  'parrot',
-  'quilt',
-  'rainbow',
-  'scorpion',
-  'tree',
-  'umbrella',
-  'violet',
-  'whalen',
-  'yellow',
-  'zebra',
-  'apple',
-  'ball',
-  'chair',
-  'crayon',
-  'dinosaur',
-  'elephant',
-  'goose',
-  'hatch',
-  'iron',
-  'jacket',
-  'kite',
-  'magnet',
-  'nail',
-  'orange',
-  'piano',
-  'quiz',
-  'reindeer',
-  'snow',
-  'trolley',
-  'upward',
-  'vortex',
-  'wrench',
-  'x-ray',
-  'yoga',
-  'zoo',
-  'art',
-  'blue',
-  'cat',
-  'doghouse',
-  'elephant',
-  'fridge',
-  'guitar',
-  'hermit',
-  'island',
-  'jungle',
-  'kitten',
-  'lemur',
-  'noodle',
+  'tiger', 'lion', 'elephant', 'giraffe', 'panda', 'kangaroo', 'zebra', 'monkey', 'wolf', 'rabbit',
+  'fox', 'bear', 'hippo', 'rhino', 'snake', 'dolphin', 'eagle', 'owl', 'penguin', 'whale',
+  'shark', 'parrot', 'cheetah', 'crocodile', 'gorilla', 'buffalo', 'octopus', 'turtle', 'antelope', 'bat',
+  'apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew', 'kiwi', 'lemon',
+  'mango', 'nectarine', 'orange', 'papaya', 'quince', 'raspberry', 'strawberry', 'tangerine',
+  'ugli', 'vanilla', 'watermelon', 'xigua', 'yellowfruit', 'zucchini', 'blackberry', 'coconut',
+  'durian', 'grapefruit', 'lychee', 'pear',
+  'Argentina', 'Brazil', 'Canada', 'Denmark', 'Egypt', 'France', 'Germany', 'Hungary', 'India', 'Japan',
+  'Kenya', 'Lebanon', 'Mexico', 'Netherlands', 'Oman', 'Portugal', 'Qatar', 'Russia', 'Spain', 'Turkey',
+  'Ukraine', 'Venezuela', 'Wales', 'Xianggang', 'Yemen', 'Zimbabwe', 'Australia', 'Belgium', 'Colombia', 'Finland',
+  'soccer', 'basketball', 'tennis', 'baseball', 'golf', 'swimming', 'volleyball', 'rugby', 'cricket', 'boxing',
+  'skiing', 'snowboarding', 'badminton', 'cycling', 'wrestling', 'karate', 'judo', 'fencing', 'archery', 'rowing',
+  'sailing', 'taekwondo', 'triathlon', 'surfing', 'handball', 'lacrosse', 'diving', 'skateboarding', 'motocross', 'hockey',
+  'red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'brown', 'black', 'white',
+  'gray', 'cyan', 'magenta', 'beige', 'indigo', 'lime', 'maroon', 'navy', 'olive', 'peach',
+  'teal', 'turquoise', 'violet', 'gold', 'silver', 'bronze', 'burgundy', 'charcoal', 'amber', 'lavender',
+  'doctor', 'teacher', 'engineer', 'nurse', 'pilot', 'chef', 'firefighter', 'artist', 'musician', 'police',
+  'scientist', 'lawyer', 'dentist', 'electrician', 'carpenter', 'mechanic', 'plumber', 'architect', 'writer', 'actor',
+  'photographer', 'veterinarian', 'astronaut', 'paramedic', 'fashion designer', 'psychologist', 'programmer', 'biologist', 'surgeon', 'farmer',
+  'computer', 'internet', 'software', 'hardware', 'robotics', 'encryption', 'firewall', 'database', 'network', 'processor',
+  'algorithm', 'coding', 'debugging', 'server', 'cloud', 'artificial intelligence', 'cybersecurity', 'operating system', 'virtual reality', 'blockchain',
+  'smartphone', 'semiconductor', 'wireless', 'microchip', 'automation', 'digital', 'bit', 'byte', 'ethernet', 'quantum computing'
 ])
-let word = ref('')
+
 let correctWord = ref('')
+let word = ref('')
+
 function scrambleWords() {
   const num = Math.floor(Math.random() * words.length)
 
-  correctWord = words[num]
+  correctWord.value = words[num]
 
   word.value = words[num]
     .split('')
     .sort(() => 0.5 - Math.random())
     .join('')
+  console.log(word.value)
 }
 scrambleWords()
+
+
+
+const props = defineProps({
+  allow: Boolean,
+  counter:Number
+})
 </script>
 
 <style scoped></style>
