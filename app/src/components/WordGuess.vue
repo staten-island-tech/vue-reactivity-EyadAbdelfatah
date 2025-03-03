@@ -4,7 +4,7 @@
       <form action="" method="get" class="" @submit.prevent="submit">
         <input
           placeholder="Type here"
-          class="input input-bordered w-full max-w-xs"
+          class="input input-bordered w-full max-w-xs text-black"
           v-model="guess"
         />
       </form>
@@ -32,7 +32,7 @@ const guess = ref('')
 const emit = defineEmits('')
 let win_counter = ref(0)
 const submit = () => {
-  if (props.correct == guess.value) {
+  if (props.correct.toLowerCase() == guess.value.toLowerCase()) {
     emit('scramble')
     win_counter.value++
     guess.value = ''
