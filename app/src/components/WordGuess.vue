@@ -25,16 +25,14 @@ import { ref, defineEmits } from 'vue'
 const props = defineProps({
   scrambled: String,
   correct: String,
-  allow:Boolean
+  allow: Boolean,
 })
-console.log(props.scrambled)
-console.log(props.correct)
+
 const guess = ref('')
 const emit = defineEmits('')
 let win_counter = ref(0)
 const submit = () => {
   if (props.correct == guess.value) {
-    console.log('yipee')
     emit('scramble')
     win_counter.value++
     guess.value = ''
